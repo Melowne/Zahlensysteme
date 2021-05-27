@@ -1,0 +1,58 @@
+﻿<Window x:Class="Zahlensysteme.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:aZahlen"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition   />
+    
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+</Grid.ColumnDefinitions>
+        <StackPanel  HorizontalAlignment="Stretch"
+               Grid.ColumnSpan="2" Background="AliceBlue" Width="Auto" >
+         
+            <Label FontSize="30" FontFamily="MV Boli" Margin="95 0 95 0" Content="Zahlensysteme"  HorizontalAlignment="Center"
+                  FontWeight="Bold" />
+        
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+            <WrapPanel Margin="0 10 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
+              
+                <Label FontSize="19" Content="Zahlensystem:" />
+             
+                <ComboBox SelectionChanged="combo1_SelectionChanged" IsReadOnly="True" IsEditable="True" SelectedIndex="8" x:Name="combo1" Width="120"/>
+                <ComboBox SelectionChanged="combo2_SelectionChanged" IsEditable="True" IsReadOnly="true" SelectedIndex="0" Name="combo2" Width="120"/>
+
+            </WrapPanel>
+        
+                <WrapPanel Margin="0 10 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                    <Label FontSize="19" Content="Zahlen:           "  />
+  
+                    <TextBox x:Name="text1" TextChanged="text1_TextChanged"   Width="120"/>
+                    <TextBox x:Name="text2" TextChanged="text2_TextChanged" Width="120"/>
+             
+             
+                </WrapPanel>
+            <WrapPanel Margin="0 10 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
+    <Button Click="Button_Click" Name="but" HorizontalAlignment="Center" Width="120" Margin=" 0 0 10 0"    Content="Wie geht das ?"/>
+                <CheckBox  x:Name="check" Margin="0" Content="Immer anzeigen"/>
+            </WrapPanel>
+
+            
+
+
+        </StackPanel>
+        <ScrollViewer Grid.Column="1" Grid.Row="1">
+            <TextBlock FontWeight="Bold" x:Name="descr"/>
+        </ScrollViewer>
+    </Grid>
+</Window>
